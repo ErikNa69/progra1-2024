@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//Función principal
+int main() 
+{
+    int opcion;
+    double V, D, T, VF, DF, TF;
+    string UD, UT;
+
+    do 
+    {
+        cout << "Seleccione la operación que desea realizar:\n";
+        cout << "1. Calcular distancia\n";
+        cout << "2. Calcular velocidad\n";
+        cout << "3. Calcular tiempo\n";
+        cout << "4. Salir\n";
+        cout << "Ingrese una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) 
+        {
+            case 1:
+                cout << "Ingrese la velocidad: ";
+                cin >> V;
+                cout << "Ingrese la unidad de medida para la distancia (m, km, etc): ";
+                cin >> UD;
+                cout << "Ingrese el tiempo: ";
+                cin >> T;
+                cout << "Ingrese la unidad de medida para el tiempo (min, h, etc): ";
+                cin >> UT;
+                DF = V * T;
+                cout << "El resultado de la distancia es: " << DF << " " << UD ;
+                cout << "/"<< UT <<"\n";
+                break;
+            case 2:
+                cout << "Ingrese la distancia: ";
+                cin >> D;
+                cout << "Ingrese la unidad de medida para la distancia (m, km, etc): ";
+                cin >> UD;
+                cout << "Ingrese el tiempo: ";
+                cin >> T;
+                cout << "Ingrese la unidad de medida para el tiempo (min, h, etc): ";
+                cin >> UT;
+                VF = D / T;
+                cout << "El resultado de la velocidad es: " << VF << " " << UD ;
+                 cout << "/"<< UT <<"\n";
+                break;
+            case 3:
+                cout << "Ingrese la distancia: ";
+                cin >> D;
+                cout << "Ingrese la unidad de medida para la distancia (m, km, etc): ";
+                cin >> UD;
+                cout << "Ingrese la velocidad: ";
+                cin >> V;
+                cout << "Ingrese la unidad de medida para el tiempo (min, h, etc): ";
+                cin >> UT;
+                TF = D / V;
+                cout << "El resultado deL tiempo es: " << TF << " " << UD ;
+                 cout << "/"<< UT <<"\n";
+                break;
+            case 4:
+                cout << "Saliendo del programa...\n";
+                break;
+            default:
+                cout << "Opción no válida. Vuelva a intentarlo.\n";
+        }
+    } 
+    while (opcion != 4);
+
+    return 0;
+}
